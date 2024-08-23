@@ -1,7 +1,5 @@
 import * as React from 'react';
-import styles from './ToolingPermissions.module.scss';
 import { IToolingPermissionsProps } from './IToolingPermissionsProps';
-import { escape } from '@microsoft/sp-lodash-subset';
 import GridView from './DataGrid/GridView';
 import Settings from './DataGrid/AppSettings';
 

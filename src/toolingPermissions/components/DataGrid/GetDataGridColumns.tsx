@@ -1,12 +1,12 @@
-import * as React from 'react';
 import { Column } from 'devextreme-react/data-grid';
 
-export function GetReactDataGridColumns() : Column[] {
+export function GetReactDataGridColumns(): any[] {
     return GetDataGridColumns().map(settings => <Column {...settings}></Column>);
 }
 
-export function GetDataGridColumns(): any {
-    return [].concat(GetViewFields());
+export function GetDataGridColumns(): any[] {
+    const fields = GetViewFields();
+    return fields;
 }
 
 function GetViewFields(): any[] {
@@ -14,13 +14,13 @@ function GetViewFields(): any[] {
         {
             caption: "Id",
             dataField: "id",
-            visible : false,
+            visible: false,
             allowEditing: false
         },
         {
             caption: "Plant",
             dataField: "plant",
-            visible : true,
+            visible: true,
             allowEditing: true,
             lookup: {
                 dataSource: ["Ahoskie", "Hamlet", "Northampton", "Richmond", "Sampson", "Southampton", "Lucedale"]
@@ -29,13 +29,13 @@ function GetViewFields(): any[] {
         {
             caption: "User",
             dataField: "user",
-            visible : true,
+            visible: true,
             allowEditing: true
         },
         {
             caption: "Role",
             dataField: "role",
-            visible : true,
+            visible: true,
             allowEditing: true,
             lookup: {
                 dataSource: [/*"Viewer", */"Standard User", "Plant Admin", "Super Admin", "Permissions Admin"]

@@ -44,13 +44,10 @@ function GetPermissions(): Promise<string[]> {
     .catch(() => []);
 }
 
-
-// Let this file here so you can see the difference the file being used is ToolingPermissionsWebPart.tsx  
-function App() {
+export default function ToolingPermissionsWebPart() {
   const isProduction = import.meta.env.PROD;
   Settings.Host = isProduction ? "" : "http://localhost:51171";
-
-  const [permissions, setPermissions] = useState<any>(null); // Update the type 'any' to match the actual type of permissions
+  const [permissions, setPermissions] = useState<any>(null); //
 
   useEffect(() => {
     const fetchPermissions = async () => {
@@ -66,14 +63,15 @@ function App() {
     fetchPermissions();
   }, []);
 
-  // return (
-  //   <>
-  //     {/* Render ToolingPermissions component with permissions from state */}
-  //     {permissions && (
-  //       <ToolingPermissions permissions={permissions} />
-  //     )}
-  //   </>
-  // )
+
+  return (
+    <>
+      {/* Render ToolingPermissions component with permissions from state */}
+      {permissions && (
+        <ToolingPermissions permissions={permissions} />
+      )}
+    </>
+  )
+
 }
 
-export default App

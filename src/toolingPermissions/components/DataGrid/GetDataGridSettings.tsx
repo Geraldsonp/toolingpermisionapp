@@ -1,5 +1,4 @@
 import GetDataGridDataSource from './GetDataGridDataSource';
-import * as $ from 'jquery';
 
 import dxDataGrid from 'devextreme/ui/data_grid';
 import { dxButtonOptions } from 'devextreme/ui/button';
@@ -17,7 +16,7 @@ export interface IDataGridSettingsAdditionalOpts {
 
 export default function GetDataGridSettings({ navButtons }: IDataGridSettingsAdditionalOpts): any {
     let excelExportData: any = null;
-    let gridComponent: dxDataGrid = null;
+    let gridComponent: dxDataGrid | null = null;
 
     let opts: any = {
         GetComponent: () => gridComponent,
